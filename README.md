@@ -12,4 +12,6 @@ SharePoint 2010 contributions by Ryan Hayes, Microsoft MVP
 
 Download the original SharePoint SUSHI from Codeplex http://sushi.codeplex.com/ 
 
+You can use this Build  sushi\Main\Source\bin with SharePoint 2013 or download and BUILD your own
+
 

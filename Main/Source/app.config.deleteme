@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="SUSHI.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+            <section name="DeleteOldDocumentsUtility.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <userSettings>
+        <SUSHI.Properties.Settings>
+            <setting name="upload_localSourceDir" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="upload_targetSharepointSite" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="upload_targetDocLib" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="upload_fileExtentionsToExclude" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="general_lastOpenTreenode" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="general_appVersionForUpgradeSettings" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="upload_createRootFolder" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="security_siteURL" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="settings_logFilesPath" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="delete_archiveDate" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="profilePics_sourceDir" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="profilePics_targetSharepointSite" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="profilePics_targetPictureLibary" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="profilePics_domainName" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="backup_backupFilesPath" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="backup_includeSubsites" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="restore_includeUserSecurity" serializeAs="String">
+                <value>False</value>
+            </setting>
+        </SUSHI.Properties.Settings>
+        <DeleteOldDocumentsUtility.Properties.Settings>
+            <setting name="Sharepointsite" serializeAs="String">
+                <value />
+            </setting>
+        </DeleteOldDocumentsUtility.Properties.Settings>
+    </userSettings>
+</configuration>

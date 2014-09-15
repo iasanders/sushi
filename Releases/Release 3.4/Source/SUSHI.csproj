@@ -1,0 +1,626 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96055E87-2F31-49E7-B9EF-5DBDDCCC67F0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SushiNS</RootNamespace>
+    <AssemblyName>sushi</AssemblyName>
+    <ApplicationIcon>Resources\artwork\App.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <ManifestCertificateThumbprint>88F11D0131A97B5B632592931BEC1B9E8361D99E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SharepointDocumentUtil_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <TargetZone>LocalIntranet</TargetZone>
+    <SignManifests>false</SignManifests>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>SharePointSUSHI2.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>I:\VSSworking\SharepointDocumentUtil.publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://catapultutil.com/sdu/</InstallUrl>
+    <SupportUrl>http://en.wikipedia.org/wiki/User:Catapultdemo</SupportUrl>
+    <ProductName>Sharepoint Document Utility</ProductName>
+    <PublisherName>Catapult</PublisherName>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.17.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Program Files\Common Files\Microsoft Shared\web server extensions\12\ISAPI\Microsoft.Office.Server.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files\Common Files\Microsoft Shared\web server extensions\60\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="General\Classes\SushiSettings.cs" />
+    <Compile Include="General\Classes\SushiSettingsUtil.cs" />
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation_EditSitesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation_EditSitesList.Designer.cs">
+      <DependentUpon>ActionBulkSiteCreation_EditSitesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Import Documents\ActionImportDocs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Import Documents\ActionImportDocs.Designer.cs">
+      <DependentUpon>ActionImportDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaDataUtil.cs" />
+    <Compile Include="General\Forms\ActionParent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="General\Forms\ActionParent.Designer.cs">
+      <DependentUpon>ActionParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Delete Old Documents\ActionDeleteOldDocs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Delete Old Documents\ActionDeleteOldDocs.Designer.cs">
+      <DependentUpon>ActionDeleteOldDocs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\Profile Images\ActionProfileImages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Profile Images\ActionProfileImages.Designer.cs">
+      <DependentUpon>ActionProfileImages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\Backup And Restore\ActionRestore.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Backup And Restore\ActionRestore.Designer.cs">
+      <DependentUpon>ActionRestore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Help And Settings\ActionSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Help And Settings\ActionSettings.Designer.cs">
+      <DependentUpon>ActionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\Backup And Restore\ActionBackup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Backup And Restore\ActionBackup.Designer.cs">
+      <DependentUpon>ActionBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\Security\ActionSecurity.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Security\ActionSecurity.Designer.cs">
+      <DependentUpon>ActionSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData.Designer.cs">
+      <DependentUpon>ActionMetaData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData_AddContnetTypeToDocLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData_AddContnetTypeToDocLib.Designer.cs">
+      <DependentUpon>ActionMetaData_AddContnetTypeToDocLib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData_BuildMapping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\MetaData\ActionMetaData_BuildMapping.Designer.cs">
+      <DependentUpon>ActionMetaData_BuildMapping.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation.Designer.cs">
+      <DependentUpon>ActionBulkSiteCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Forms\FrmCancelRunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Forms\FrmCancelRunning.Designer.cs">
+      <DependentUpon>FrmCancelRunning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Delete Old Documents\ActionDeleteOldDocsUtil.cs" />
+    <Compile Include="General\Classes\SushiHelp.cs" />
+    <Compile Include="Action\Administration\Backup And Restore\ucCreateSchedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Backup And Restore\ucCreateSchedule.Designer.cs">
+      <DependentUpon>ucCreateSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\Classes\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionBulkSiteCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Sites\Bulk Create Sites\ActionBulkSiteCreation_EditSitesList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionBulkSiteCreation_EditSitesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomization.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionBulkWebPartCustomization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Copy View\ActionCopyView_AddFavorite.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionCopyView_AddFavorite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Delete Old Documents\ActionDeleteOldDocs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionDeleteOldDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Email\ActionEmail.resx">
+      <DependentUpon>ActionEmail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Import Documents\ActionImportDocs.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionImportDocs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Forms\ActionParent.resx">
+      <DependentUpon>ActionParent.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Profile Images\ActionProfileImages.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionProfileImages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Backup And Restore\ActionRestore.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionRestore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Help And Settings\ActionSettings.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Backup And Restore\ActionBackup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Security\ActionSecurity.resx">
+      <DependentUpon>ActionSecurity.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\MetaData\ActionMetaData.resx">
+      <DependentUpon>ActionMetaData.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\MetaData\ActionMetaData_AddContnetTypeToDocLib.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionMetaData_AddContnetTypeToDocLib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\MetaData\ActionMetaData_BuildMapping.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ActionMetaData_BuildMapping.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomize_EditParameters.resx">
+      <DependentUpon>ActionBulkWebPartCustomize_EditParameters.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Copy View\ActionCopyView.resx">
+      <DependentUpon>ActionCopyView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Sites\Themes\ActionThemes.resx">
+      <DependentUpon>ActionThemes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\FileNotFound\ActionErrorsFileNotFound.resx">
+      <DependentUpon>ActionErrorsFileNotFound.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Bulk Create Lists\ActionBulkListCreation.resx">
+      <DependentUpon>ActionBulkListCreation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Site Columns\ActionBulkSiteColumns.resx">
+      <DependentUpon>ActionBulkSiteColumns.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Lists\Site Columns\ActionBulkSiteColumns_EditSitesColumns.resx">
+      <DependentUpon>ActionBulkSiteColumns_EditSitesColumns.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Forms\FrmCancelRunning.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FrmCancelRunning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Forms\MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Forms\SelectSite.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectSite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="General\Forms\SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Action\Administration\Backup And Restore\ucCreateSchedule.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ucCreateSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config.deleteme" />
+    <Compile Include="Action\Administration\Backup And Restore\AutoCache.cs" />
+    <Compile Include="Action\Administration\Backup And Restore\AutoStartUtil.cs" />
+    <Compile Include="General\Classes\Eh.cs" />
+    <Compile Include="General\Classes\GlobalVars.cs" />
+    <Compile Include="Action\Administration\Security\ActionSecurityUtil.cs" />
+    <Compile Include="General\Classes\SmartStepsUtil.cs" />
+    <Compile Include="General\Classes\Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\artwork\App.ico" />
+    <None Include="Resources\splash.png" />
+    <None Include="Resources\browse.gif" />
+    <None Include="Resources\select_site1.gif" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\help_d.png" />
+    <None Include="Resources\help_h.png" />
+    <None Include="Resources\loading1.gif" />
+    <None Include="Resources\question_sushi_trans.gif" />
+    <None Include="Resources\sushi_question_small_orange_transparent.gif" />
+    <None Include="Resources\sushi_question_small_orange_transparent_selected3.gif" />
+    <None Include="Resources\sushi_question_small_orange_transparent_selected2.gif" />
+    <None Include="Resources\sushi_question_small_orange_transparent_selected.gif" />
+    <None Include="Resources\sushi_question_small_orange.gif" />
+    <None Include="Resources\sushi_question_small.gif" />
+    <None Include="Resources\itdl.gif" />
+    <None Include="Resources\it_stsicon.gif" />
+    <None Include="Resources\ittask.gif" />
+    <None Include="Resources\itil.gif" />
+    <None Include="Resources\itgen.gif" />
+    <None Include="Resources\itevent.gif" />
+    <None Include="Resources\itdisc.gif" />
+    <None Include="Resources\itcontct.gif" />
+    <None Include="Resources\sushiart_addASite.gif" />
+    <Compile Include="Action\Administration\Backup And Restore\AutoBackup.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="General\Classes\SharePointUtil.cs" />
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomization.Designer.cs">
+      <DependentUpon>ActionBulkWebPartCustomization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomize_EditParameters.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Sites\Bulk Create Sites\ActionBulkWebPartCustomize_EditParameters.Designer.cs">
+      <DependentUpon>ActionBulkWebPartCustomize_EditParameters.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Copy View\ActionCopyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Copy View\ActionCopyView.Designer.cs">
+      <DependentUpon>ActionCopyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Copy View\ActionCopyViewUtil.cs" />
+    <Compile Include="Action\Lists\Copy View\ActionCopyView_AddFavorite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Copy View\ActionCopyView_AddFavorite.Designer.cs">
+      <DependentUpon>ActionCopyView_AddFavorite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Sites\Themes\ActionThemes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Sites\Themes\ActionThemes.Designer.cs">
+      <DependentUpon>ActionThemes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\FileNotFound\ActionErrorsFileNotFound.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\FileNotFound\ActionErrorsFileNotFound.Designer.cs">
+      <DependentUpon>ActionErrorsFileNotFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Bulk Create Lists\ActionBulkListCreation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Bulk Create Lists\ActionBulkListCreation.Designer.cs">
+      <DependentUpon>ActionBulkListCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Administration\Email\ActionEmail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Administration\Email\ActionEmail.Designer.cs">
+      <DependentUpon>ActionEmail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Site Columns\ActionBulkSiteColumns.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Site Columns\ActionBulkSiteColumns.Designer.cs">
+      <DependentUpon>ActionBulkSiteColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Action\Lists\Site Columns\ActionBulkSiteColumns_EditSitesColumns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Action\Lists\Site Columns\ActionBulkSiteColumns_EditSitesColumns.Designer.cs">
+      <DependentUpon>ActionBulkSiteColumns_EditSitesColumns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="General\SubClassControls\LnkBrowseSite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="General\SubClassControls\LnkSelectASite.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="General\Forms\SelectSite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="General\Forms\SelectSite.Designer.cs">
+      <DependentUpon>SelectSite.cs</DependentUpon>
+    </Compile>
+    <None Include="Resources\sdu_splash_with_text.gif" />
+    <None Include="Resources\catutil_helpIcon.jpg" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\actionImage_operator_console.jpg" />
+    <None Include="SharePointSUSHI2.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="artwork\App.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.HtmlTrans.Interface">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Internal.Mime">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Server">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Server.Diagnostics">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Office.Server.Search">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.AdministrationOperation">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Diagnostics">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Dsp">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Library">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Publishing">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Search">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SharePoint.Security">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Web.Design.Server">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Workflow.Activities">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Workflow.ComponentModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="System.Workflow.Runtime">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\images\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
